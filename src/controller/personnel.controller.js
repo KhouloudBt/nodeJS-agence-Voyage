@@ -1,4 +1,4 @@
-const Personnel = require ("../services/personnel.service");
+const Personnel = require ("./../services/personnel.service");
 
 // Create and Save a new Personnel
 exports.create = (req, res) => {

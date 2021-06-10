@@ -17,6 +17,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // set port, listen for requests
 require("./src/routers/voyage.router")(app);
 require("./src/routers/personnel.router")(app);
+// Require employee routes
+const hotel = require('./src/routers/hotel.router')
+// using as middleware
+app.use('/hotels', hotel)
+
+
 app.listen(3002, () => {
     //console.log(sql);
    console.log("Server is running on port 3002.");
