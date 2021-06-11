@@ -1,4 +1,4 @@
-var dbConn = require('./../../db/db');
+var dbConn = require('./../../config_DB/db');
 
 //Hotels object
 var Hotels = function(hotel){
