@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const hotelController =   require('./../controller/hotel.controller');
-
-
+const hotelController =   require('src\routers\hotel.router.js');
 // Retrieve all hotels
 router.get('/', hotelController.findAll);
 // Create a new hotel
