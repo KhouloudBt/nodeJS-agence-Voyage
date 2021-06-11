@@ -1,5 +1,5 @@
 module.exports = app => {
-    const reservation = require("./../controller/reservation.controller");
+    const reservation = require("../controller/reservation.controller");
   
     // Create a new reservation
     app.post("/reservation", reservation.create);

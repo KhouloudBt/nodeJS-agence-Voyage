@@ -1,5 +1,5 @@
 module.exports = app => {
-    const role = require("./controller/role.controller");
+    const role = require("../controller/role.controller");
   
     // Create a new personnel
     app.post("/role/create", role.create);

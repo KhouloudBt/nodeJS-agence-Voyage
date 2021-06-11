@@ -1,4 +1,4 @@
-const Hotel = require('./../services/hotel.service');
+const Hotel = require('../services/hotel.service');
 
 exports.findAll = function(req, res) {
 Hotel.findAll(function(err, hotel) {

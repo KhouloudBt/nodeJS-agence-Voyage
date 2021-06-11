@@ -1,5 +1,5 @@
 
-const Voyage = require ("./../services/voyage.service");
+const Voyage = require ("../services/voyage.service");
 
 // Create and Save a new Voyage
 exports.create = (req, res) => {
