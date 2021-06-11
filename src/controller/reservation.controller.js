@@ -1,4 +1,5 @@
-const Reservation = require ("./services/reservation.service");
+
+const Reservation = require ("./../services/reservation.service");
 
 // Create and Save a new reservation
 exports.create = (req, res) => {

@@ -1,4 +1,5 @@
-const sql = require("../config_DB/db");
+
+const sql = require("./../../config_DB/db");
 
 // constructor
 const Personnel = function(pers) {
