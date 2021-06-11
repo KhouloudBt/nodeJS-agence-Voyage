@@ -1,3 +1,4 @@
+
 const Voyage = require ("./../services/voyage.service");
 
 // Create and Save a new Voyage
