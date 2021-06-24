@@ -1,5 +1,5 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+
 const app = express();
 //const sql = require("./config_DB/db");
 
@@ -7,10 +7,10 @@ const app = express();
 //app.use(bodyParser);
 
 // parse requests of content-type: application/json
-app.use(bodyParser.json());
+app.use(express.json());
 
 // parse requests of content-type: application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 //app.use(express.json());
 //app.use(express.urlencoded());
@@ -18,9 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require("./src/routers/voyage.router")(app);
 require("./src/routers/personnel.router")(app);
 // Require employee routes
-const hotel = require('./src/routers/hotel.router')
+const hotel = require('./src/routers/role.router')(app);
 // using as middleware
-app.use('/hotels', hotel)
+//app.use('/hotels', hotel)
 
 
 app.listen(3002, () => {

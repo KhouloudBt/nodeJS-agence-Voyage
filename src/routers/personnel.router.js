@@ -8,13 +8,14 @@ module.exports = app => {
     app.get("/personnel/getbyCin/:cin",personnel.findByCin);
     app.get("/personnel/getbyName/:nom",personnel.findByName);
     app.get("/personnel/getbyPrenom/:prenom",personnel.findByPrenom);
-    app.get("/personnel/getbyFonction/:fonction",personnel.findByFonction);
-
-    
+    app.get("/personnel/getbyRole/:role",personnel.findByRole);   
+    app.get("/personnel/login",personnel.login);   
 
     app.delete("/personnel/delete/:cin",personnel.delete);
 
     app.put("/personnel/update",personnel.update);
+    app.put("/personnel/affecterRole/:cin/:id_role",personnel.AffecterRole);
+
   
     
   };
