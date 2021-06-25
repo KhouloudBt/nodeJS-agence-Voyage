@@ -151,3 +151,11 @@ exports.deleteAll = (req, res) => {
       else res.send({ message: `All voyages were deleted successfully!` });
     });
 };
+
+exports.getNumber= function (req, res) {
+  Voyage.getNumber(function (err,personnel) {
+    if (err) res.send(err);
+    res.json(personnel);
+  });
+};
+

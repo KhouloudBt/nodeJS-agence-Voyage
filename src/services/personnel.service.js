@@ -152,4 +152,16 @@ Personnel.create = (newPersonnel, result) => {
       });
       };
 
+      Personnel.getNumber = function(result){
+        sql.query("SELECT count (*) as number  From personnel",
+          function (err, res) {
+        if(err) {
+          console.log("error: ", err);
+          result(null, err);
+        }else{
+          result(null, res[0]);
+        }
+        });
+        };
+
   module.exports = Personnel;
