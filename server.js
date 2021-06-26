@@ -1,8 +1,8 @@
 const express = require("express");
-
-const app = express();
 //const sql = require("./config_DB/db");
-
+var cors = require('cors');
+var app = express();
+//app.use(cors({  origin: '*'}));
 
 //app.use(bodyParser);
 
@@ -20,10 +20,10 @@ require("./src/routers/personnel.router")(app);
 require("./src/routers/task.router")(app);
 
 // Require employee routes
-const hotel = require('./src/routers/role.router')(app);
+//const hotel = require('./src/routers/role.router')(app);
+const hotel = require('./src/routers/hotel.router')
 // using as middleware
-//app.use('/hotels', hotel)
-
+app.use('/hotels', hotel)
 
 app.listen(3002, () => {
     //console.log(sql);
