@@ -40,7 +40,19 @@ Role.create = (newRole, result) => {
     }
     });
     };
-    
+    Role.findAll = function (result) {
+      sql.query("Select * from role", function (err, res) {
+      if(err) {
+        console.log("error: ", err);
+        result(null, err);
+      }
+      else{
+        console.log('role : ', res);
+        result(null, res);
+      }
+      });
+      };
+      
       
     
     

@@ -9,7 +9,7 @@ module.exports = app => {
     app.get("/reservation/getbyResId/:resId",reservation.findByResId);
     app.get("/reservation/getbyClientId/:resId",reservation.findByClientId);
     app.get("/reservation/getbyVoyageId/:resId",reservation.findByVoyageId);
-    
+
 
     app.delete("/reservation/deletebyResId/:resId",reservation.deleteResId);
     app.delete("/reservation/deletebyClientId/:clientId",reservation.deleteClientId);

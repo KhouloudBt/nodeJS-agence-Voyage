@@ -5,10 +5,7 @@ module.exports = app => {
     app.post("/role/create", role.create);
 
     app.get("/role/getAll",role.findAll);
-    app.get("/role/getbyId/:id",role.findById);
-    app.get("/personnel/getbyTitle/:title",role.findByTitle);
-
-    
+    app.get("/role/getbyId/:id",role.findById);    
 
     app.delete("/role/delete/:id",role.delete);
 

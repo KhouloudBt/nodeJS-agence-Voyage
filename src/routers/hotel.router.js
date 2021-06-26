@@ -1,6 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const hotelController =   require('../controller/hotel.controller');
+var cors = require('cors');
+router.use(cors());
+
+
+
 // Retrieve all hotels
 router.get('/', hotelController.findAll);
 // Create a new hotel
