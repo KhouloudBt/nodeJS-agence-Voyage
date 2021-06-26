@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // set port, listen for requests
 require("./src/routers/voyage.router")(app);
 require("./src/routers/personnel.router")(app);
+require("./src/routers/reservation.router")(app);
 // Require employee routes
 const hotel = require('./src/routers/hotel.router')
 // using as middleware

@@ -74,8 +74,8 @@ Reservation.findAll(function(err, reservation) {
 
 
 //delete reservation by resID
-  exports.delete = function(req, res) {
-Reservation.delete(req.params.resId,function(err, reservation) {
+  exports.deleteResId = function(req, res) {
+Reservation.deleteResId(req.params.resId,function(err, reservation) {
   if (err)
   res.send(err);
   res.json(reservation);
@@ -85,8 +85,8 @@ Reservation.delete(req.params.resId,function(err, reservation) {
 
 
 //delete reservation by clientID
-  exports.delete = function(req, res) {
-Reservation.delete(req.params.clientId,function(err, reservation) {
+  exports.deleteClientId = function(req, res) {
+Reservation.deleteClientId(req.params.clientId,function(err, reservation) {
   if (err)
   res.send(err);
   res.json(reservation);
@@ -96,8 +96,8 @@ Reservation.delete(req.params.clientId,function(err, reservation) {
 
 
 //delete reservation by voyageID
-  exports.delete = function(req, res) {
-Reservation.delete(req.params.voyageId,function(err, reservation) {
+  exports.deleteVoyageId = function(req, res) {
+Reservation.deleteVoyageId(req.params.voyageId,function(err, reservation) {
   if (err)
   res.send(err);
   res.json(reservation);
@@ -112,7 +112,6 @@ exports.update = function(req, res) {
 
 
     const reservation = new Reservation({
-    resId: req.body.resId,
     dateRes: req.body.dateRes,
         dateDebut: req.body.dateDebut,
         dateFin: req.body.dateFin,
@@ -123,7 +122,7 @@ exports.update = function(req, res) {
     
     });
       
-Reservation.update(reservation,function(err, reservation) {
+Reservation.update(req.params.resId,reservation,function(err, reservation) {
   if (err)
   res.send(err);
   res.json(reservation);

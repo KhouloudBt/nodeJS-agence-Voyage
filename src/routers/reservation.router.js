@@ -11,10 +11,10 @@ module.exports = app => {
     app.get("/reservation/getbyVoyageId/:resId",reservation.findByVoyageId);
     
 
-    app.delete("/reservation/deletebyResId/:resId",reservation.delete);
-    app.delete("/reservation/deletebyClientId/:clientId",reservation.delete);
-    app.delete("/reservation/deletebyvoyageId/:voyageId",reservation.delete);
+    app.delete("/reservation/deletebyResId/:resId",reservation.deleteResId);
+    app.delete("/reservation/deletebyClientId/:clientId",reservation.deleteClientId);
+    app.delete("/reservation/deletebyvoyageId/:voyageId",reservation.deleteVoyageId);
 
 
-    app.put("/reservation/update",reservation.update);
+    app.put("/reservation/update/:resId",reservation.update);
   };

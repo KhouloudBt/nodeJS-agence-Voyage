@@ -83,7 +83,7 @@ else{
 
 
 //delete reservation by resID
-Reservation.delete = function(resId, result){
+Reservation.deleteResId = function(resId, result){
 sql.query("DELETE FROM reservation WHERE resId = ?", resId, function (err, res) {
 if(err) {
   console.log("error: ", err);
@@ -98,7 +98,7 @@ else{
 
 
 //delete reservation by clientID
-Reservation.delete = function(clientId, result){
+Reservation.deleteClientId = function(clientId, result){
 sql.query("DELETE FROM reservation WHERE clientId = ?", clientId, function (err, res) {
 if(err) {
   console.log("error: ", err);
@@ -114,7 +114,7 @@ else{
 
 
 //delete reservation by voyageID
-Reservation.delete = function(voyageId, result){
+Reservation.deleteVoyageId = function(voyageId, result){
 sql.query("DELETE FROM reservation WHERE voyageId = ?", voyageId, function (err, res) {
 if(err) {
   console.log("error: ", err);
@@ -128,8 +128,8 @@ else{
 
 
 
-Reservation.update = function(reservation, result){
-sql.query("UPDATE reservation SET dateRes=?,dateDebut=?,dateFin=?,clientId=?,nbPlaces=?,confirmation=?,voyageId = ? WHERE resId = ?", [reservation.dateRes,reservation.dateDebut,reservation.dateFin,reservation.clientId,reservation.nbPlaces,reservation.confirmation,reservation.voyageId,reservation.resId], function (err, res) {
+Reservation.update = function(resId,reservation, result){
+sql.query("UPDATE reservation SET dateRes=?,dateDebut=?,dateFin=?,clientId=?,nbPlaces=?,confirmation=?,voyageId = ? WHERE resId = ?", [reservation.dateRes,reservation.dateDebut,reservation.dateFin,reservation.clientId,reservation.nbPlaces,reservation.confirmation,reservation.voyageId,resId], function (err, res) {
 if(err) {
   console.log("error: ", err);
   result(null, err);
@@ -138,5 +138,5 @@ if(err) {
 }
 });
 };
-  
+
   module.exports = Reservation;
