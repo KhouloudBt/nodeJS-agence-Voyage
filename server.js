@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 // set port, listen for requests
 require("./src/routers/voyage.router")(app);
 require("./src/routers/personnel.router")(app);
+require("./src/routers/task.router")(app);
+
 // Require employee routes
 const hotel = require('./src/routers/role.router')(app);
 // using as middleware

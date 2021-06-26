@@ -9,16 +9,7 @@ exports.create = (req, res) => {
       message: "Content can not be empty!",
     });
   }
-  // Save Personnel in the database
-  /*function cryptPassword(password)
-      {
-      bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(password, salt, (err, hash) => {
-        if(err) throw err;
-        return hash;
-    })
-  });}*/
-
+  
   // Create Personnel
   const personnel = new Personnel({
     cin: req.body.cin,
@@ -53,7 +44,6 @@ exports.create = (req, res) => {
 //retreive Personnel by cin
 
 exports.findByCin = (req, res) => {
-  console.log("hehehehehheheheheheeheheheheheheheheeheeh");
   Personnel.findByCin(req.params.cin, (err, data) => {
     if (err) {
       if (err.kind === "not_found") {
@@ -113,7 +103,6 @@ exports.login = function (req, res) {
   );
 };
 
-//retreive Personnel by fonction
 exports.findByRole = function (req, res) {
   Personnel.findByRole(req.params.role, function (err, personnel) {
     if (err) res.send(err);
