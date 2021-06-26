@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 //const sql = require("./config_DB/db");
 var cors = require('cors');
 var app = express();
@@ -7,16 +8,17 @@ var app = express();
 //app.use(bodyParser);
 
 // parse requests of content-type: application/json
-app.use(express.json());
+app.use(bodyParser.json());
 
 // parse requests of content-type: application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //app.use(express.json());
 //app.use(express.urlencoded());
 // set port, listen for requests
 require("./src/routers/voyage.router")(app);
 require("./src/routers/personnel.router")(app);
+
 require("./src/routers/task.router")(app);
 
 // Require employee routes
